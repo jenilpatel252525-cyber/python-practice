@@ -1,0 +1,27 @@
+a=[-1,2,1,-4]
+
+p=1
+
+a.sort()
+
+n = len(a)
+
+ans = a[0] + a[1] + a[2]
+
+for i in range(n):
+    j = i + 1
+    k = n - 1
+    
+    while j < k:
+        total = a[i] + a[j] + a[k]
+
+        if abs(total-p) < abs(ans-p):
+            ans=total
+
+        if total < p:
+            j+=1
+
+        else:
+            k-=1
+
+print(ans)
